@@ -1,5 +1,5 @@
 Name:          npm
-Version:       1.0.22
+Version:       1.0.23
 Release:       1%{?dist}
 Summary:       A package manager for Node.js
 Packager:      Kazuhisa Hara <kazuhisya@gmail.com>
@@ -7,7 +7,7 @@ Group:         Development/Libraries
 License:       MIT License
 URL:           http://npmjs.org/
 BuildRoot:     %{_tmppath}/%{name}-%{version}-%{release}-root
-Source0:       npm-1.0.22.tgz
+Source0:       npm-%{version}.tgz
 BuildRequires: nodejs
 Requires:      nodejs
 BuildArch:     noarch
@@ -44,5 +44,7 @@ node ./cli.js install -g
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Mon Aug  8 2011 Kazuhisa Hara <kazuhisya@gmail.com>
+- Updated to mpn version 1.0.23
 * Fri Jul 29 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Initial version
