@@ -1,5 +1,5 @@
 Name:          npm
-Version:       1.0.23
+Version:       1.0.24
 Release:       1%{?dist}
 Summary:       A package manager for Node.js
 Packager:      Kazuhisa Hara <kazuhisya@gmail.com>
@@ -44,6 +44,8 @@ node ./cli.js install -g
 rm -rf $RPM_BUILD_ROOT
 
 %changelog
+* Mon Aug 15 2011 Kazuhisa Hara <kazuhisya@gmail.com>
+- Updated to mpn version 1.0.24
 * Mon Aug  8 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Updated to mpn version 1.0.23
 * Fri Jul 29 2011 Kazuhisa Hara <kazuhisya@gmail.com>
