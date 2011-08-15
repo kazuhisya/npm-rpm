@@ -51,7 +51,6 @@ rm -rf $RPM_BUILD_ROOT
 * Mon Aug 15 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Updated to mpn version 1.0.24
 - Added workaround does not work properly npm install
-- 
 * Mon Aug  8 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Updated to mpn version 1.0.23
 * Fri Jul 29 2011 Kazuhisa Hara <kazuhisya@gmail.com>
