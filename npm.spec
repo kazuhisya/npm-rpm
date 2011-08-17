@@ -1,6 +1,6 @@
 Name:          npm
 Version:       1.0.25
-Release:       2%{?dist}
+Release:       1%{?dist}
 Summary:       A package manager for Node.js
 Packager:      Kazuhisa Hara <kazuhisya@gmail.com>
 Group:         Development/Libraries
