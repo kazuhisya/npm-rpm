@@ -1,5 +1,5 @@
 Name:          npm
-Version:       1.0.24
+Version:       1.0.25
 Release:       2%{?dist}
 Summary:       A package manager for Node.js
 Packager:      Kazuhisa Hara <kazuhisya@gmail.com>
@@ -48,6 +48,8 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/npm config set registry http://registry.npmjs.org/
 
 %changelog
+* Wed Aug 17 2011 Kazuhisa Hara <kazuhisya@gmail.com>
+* Updated to mpn version 1.0.25
 * Mon Aug 15 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Updated to mpn version 1.0.24
 - Added workaround does not work properly npm install
