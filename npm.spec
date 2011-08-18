@@ -48,7 +48,7 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/npm config set registry http://registry.npmjs.org/
 
 %changelog
-* Thu Aug 18 2011 Kazuhisa Hara <kazuhisya@gmail.com>↲
+* Thu Aug 18 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Updated to mpn version 1.0.26
 * Wed Aug 17 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Updated to mpn version 1.0.25
