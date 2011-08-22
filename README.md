@@ -5,6 +5,6 @@
 After git clone, to check the version is recommended
 
 ~~~
-$ git tag↲
+$ git tag
 ~~~
 
