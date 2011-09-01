@@ -8,3 +8,4 @@ After git clone, to check the version is recommended
 $ git tag
 ~~~
 
+Sorce tgz file from: http://search.npmjs.org/#/npm
