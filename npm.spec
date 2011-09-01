@@ -1,6 +1,6 @@
 Name:          npm
 Version:       1.0.27
-Release:       1%{?dist}
+Release:       2%{?dist}
 Summary:       A package manager for Node.js
 Packager:      Kazuhisa Hara <kazuhisya@gmail.com>
 Group:         Development/Libraries
@@ -34,6 +34,15 @@ npm_config_binroot=$RPM_BUILD_ROOT%{_bindir} \
 npm_config_manroot=$RPM_BUILD_ROOT%{_mandir} \
 node ./cli.js install -g
 
+# workaround for automatically compresses manfile
+custom_mandir=$RPM_BUILD_ROOT%{_mandir}/man1
+rm -rf $RPM_BUILD_ROOT%{_mandir}
+mkdir -p $RPM_BUILD_ROOT%{_mandir}
+cp -rf $RPM_BUILD_ROOT/usr/lib/node_modules/npm/man1 $RPM_BUILD_ROOT%{_mandir}
+cd ${custom_mandir}
+for manfile in *; do mv -i $manfile `echo $manfile | sed 's/^/npm_/'`; done
+mv npm_npm.1 npm.1
+
 %files
 %defattr(-,root,root,-)
 %{_prefix}/lib/node_modules/npm
@@ -48,6 +57,8 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/npm config set registry http://registry.npmjs.org/
 
 %changelog
+* Thu Sep  1 2011 Kazuhisa Hara <kazuhisya@gmail.com>
+- Fixed manfile
 * Fri Aug 26 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Updated to mpn version 1.0.27
 * Thu Aug 18 2011 Kazuhisa Hara <kazuhisya@gmail.com>
