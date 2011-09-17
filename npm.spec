@@ -1,6 +1,6 @@
 Name:          npm
-Version:       1.0.27
-Release:       2%{?dist}
+Version:       1.0.30
+Release:       1%{?dist}
 Summary:       A package manager for Node.js
 Packager:      Kazuhisa Hara <kazuhisya@gmail.com>
 Group:         Development/Libraries
@@ -57,6 +57,8 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/npm config set registry http://registry.npmjs.org/
 
 %changelog
+* Sun Sep 18 2011 Kazuhisa Hara <kazuhisya@gmail.com>
+- Updated to mpn version 1.0.30
 * Thu Sep  1 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Fixed manfile
 * Fri Aug 26 2011 Kazuhisa Hara <kazuhisya@gmail.com>
