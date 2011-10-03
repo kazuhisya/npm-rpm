@@ -1,5 +1,5 @@
 Name:          npm
-Version:       1.0.30
+Version:       1.0.90
 Release:       1%{?dist}
 Summary:       A package manager for Node.js
 Packager:      Kazuhisa Hara <kazuhisya@gmail.com>
@@ -35,19 +35,25 @@ npm_config_manroot=$RPM_BUILD_ROOT%{_mandir} \
 node ./cli.js install -g
 
 # workaround for automatically compresses manfile
-custom_mandir=$RPM_BUILD_ROOT%{_mandir}/man1
+custom_mandir_1=$RPM_BUILD_ROOT%{_mandir}/man1
 rm -rf $RPM_BUILD_ROOT%{_mandir}
 mkdir -p $RPM_BUILD_ROOT%{_mandir}
-cp -rf $RPM_BUILD_ROOT/usr/lib/node_modules/npm/man1 $RPM_BUILD_ROOT%{_mandir}
-cd ${custom_mandir}
+cp -rf $RPM_BUILD_ROOT/usr/lib/node_modules/npm/man/man1 $RPM_BUILD_ROOT%{_mandir}
+cd ${custom_mandir_1}
 for manfile in *; do mv -i $manfile `echo $manfile | sed 's/^/npm_/'`; done
 mv npm_npm.1 npm.1
+
+custom_mandir_3=$RPM_BUILD_ROOT%{_mandir}/man3
+cp -rf $RPM_BUILD_ROOT/usr/lib/node_modules/npm/man/man3 $RPM_BUILD_ROOT%{_mandir}
+cd ${custom_mandir_3}
+for manfile in *; do mv -i $manfile `echo $manfile | sed 's/^/npm_/'`; done
 
 %files
 %defattr(-,root,root,-)
 %{_prefix}/lib/node_modules/npm
 %{_bindir}/npm*
 %{_mandir}/man1/*
+%{_mandir}/man3/*
 
 %clean
 rm -rf $RPM_BUILD_ROOT
@@ -57,6 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/npm config set registry http://registry.npmjs.org/
 
 %changelog
+* Mon Oct  3 2011 Kazuhisa Hara <kazuhisya@gmail.com>
+- Updated to mpn version 1.0.90
 * Sun Sep 18 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Updated to mpn version 1.0.30
 * Thu Sep  1 2011 Kazuhisa Hara <kazuhisya@gmail.com>
