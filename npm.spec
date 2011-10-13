@@ -1,5 +1,5 @@
 Name:          npm
-Version:       1.0.94
+Version:       1.0.95
 Release:       1%{?dist}
 Summary:       A package manager for Node.js
 Packager:      Kazuhisa Hara <kazuhisya@gmail.com>
@@ -63,6 +63,8 @@ rm -rf $RPM_BUILD_ROOT
 /usr/bin/npm config set registry http://registry.npmjs.org/
 
 %changelog
+* Thu Oct 13 2011 Kazuhisa Hara <kazuhisya@gmail.com>
+- Updated to mpn version 1.0.95
 * Thu Oct  6 2011 Kazuhisa Hara <kazuhisya@gmail.com>
 - Updated to mpn version 1.0.94
 * Tue Oct  4 2011 Kazuhisa Hara <kazuhisya@gmail.com>
