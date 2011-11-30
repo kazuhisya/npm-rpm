@@ -1,3 +1,5 @@
+[Caution]npm has been incorporated into the node-rpm
+
 * node.js rpm spec: https://github.com/kazuhisya/nodejs-rpm
 * node.js sorce   : http://nodejs.org/dist/
 
